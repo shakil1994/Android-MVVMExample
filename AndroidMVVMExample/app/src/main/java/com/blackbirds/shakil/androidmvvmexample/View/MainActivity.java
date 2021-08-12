@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         txtResult = findViewById(R.id.txtResult);
 
         btnAdd.setOnClickListener(v -> {
-            String resultText = mainActivityViewModel.addFunction(edtNumberOne.getText().toString(),
-                    edtNumberTwo.getText().toString());
-            txtResult.setText(resultText);
+            mainActivityViewModel.addFunction(edtNumberOne.getText().toString(),
+                    edtNumberTwo.getText().toString()).observe(this, s -> {
+                txtResult.setText(s);
+            });
+
         });
     }
 }
