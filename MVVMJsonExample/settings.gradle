@@ -1,0 +1,2 @@
+rootProject.name = "MVVMJsonExample"
+include ':app'
